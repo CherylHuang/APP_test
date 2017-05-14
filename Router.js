@@ -283,13 +283,8 @@ export const TabRouter = TabNavigator(
 );
 
 export const LoginStack = StackNavigator({
-    LoginScreen: {screen: LoginScreen,},
-    NewUserScreen: {screen: NewUserScreen},
-    AccountStack: {screen: AccountStack},
-    MedicineStack: {screen: MedicineStack},
-    RemindStack: {screen: RemindStack},
-    HistoryStack: {screen: HistoryStack},
-    SettingStack: {screen: SettingStack},
+    LoginScreen: {screen: LoginScreen},
+    NewUserScreen: {screen: NewUserScreen}
   },
   {
     headerMode: 'none',
