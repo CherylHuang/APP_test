@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Image, Text ,ScrollView } from 'react-native';
+import { View, Image, Text ,ScrollView, StatusBar } from 'react-native';
 import { List, ListItem, Icon,Button,Card } from 'react-native-elements';
 import CheckBox from 'react-native-icon-checkbox';
 import me from '../json/me.json';
