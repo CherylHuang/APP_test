@@ -1,3 +1,5 @@
-import data from './json/medicine.json';
+import MedicineData from './json/medicine.json';
+import ClockData from './json/clock.json';
+import TimeTableData from './json/timetable.json'
 
-export default () => data;
+export default () => MedicineData;

@@ -356,15 +356,19 @@ class App extends React.Component {
 // const store = createStore(appReducer);
 
 
-const AppWithNavigationState = ({ dispatch, nav }) => (
-  <TabRouter navigation={addNavigationHelpers({ dispatch, state: nav })} />
-);
 
-const mapStateToProps = (state) => ({
-  nav: state.nav
-});
 
-export default connect(mapStateToProps)(AppWithNavigationState);
+// const AppWithNavigationState = ({ dispatch, nav }) => (
+//   <TabRouter navigation={addNavigationHelpers({ dispatch, state: nav })} />
+// );
+
+// const mapStateToProps = (state) => ({
+//   nav: state.nav
+// });
+
+// export default connect(mapStateToProps)(AppWithNavigationState);
+
+
 
 /*class Root extends React.Component {
   render() {

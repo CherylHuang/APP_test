@@ -24,15 +24,13 @@ class App extends Component {
     });
   }
 
-  store = createStore(appReducer);
-
   render() {
     return (
-        <Provider store={this.store}>
-           {/*<TabRouter />*/}
+        <Provider store={createStore(reducers)}>
+           <TabRouter />
            {/*<LoginStack />*/}
            {/*<Remind />*/}
-           <AppWithNavigationState />
+           {/*<AppWithNavigationState />*/}
         </Provider>
     );
   }

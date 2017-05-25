@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, ActivityIndicator, AsyncStorage, Image, Text, StatusBar } from 'react-native';
 import * as firebase from 'firebase';
 import { FormLabel, FormInput, FormValidationMessage, Button } from 'react-native-elements';
-import { Expo, Facebook } from 'expo';
+import Expo ,{ Facebook } from 'expo';
 
 import Confirm from '../components/Confirm';
 
@@ -68,7 +68,7 @@ class LoginScreen extends Component {
   }
 
 // google login
-// googleLogin = async function signInWithGoogleAsync() {
+// googleLogin = async() =>  {
 //   try {
 //     const result = await Expo.Google.logInAsync({
 //       iosClientId: '863020286473-5bg2lddb9ul0s8v7u3j06j4am5seqdtb.apps.googleusercontent.com',
@@ -82,6 +82,7 @@ class LoginScreen extends Component {
 //     }
     
 //   } catch(e) {
+//     console.log('Error when logining Google ...');
 //     return {error: true};
 //   }
 // }
@@ -116,14 +117,14 @@ doGoogleLogin = async () => {
     this.setState({ status: 'Hello!' });
 
     const credential = firebase.auth.GoogleAuthProvider.credential(token);
-    // Sign in with credential from the Facebook user.
+    // Sign in with credential from the Google user.
     try {
       await firebase.auth().signInWithCredential(credential);
       const { currentUser } = await firebase.auth();
       console.log(`currentUser = ${currentUser.uid}`);
-      // this.props.navigation.navigate('TabRouter');
+      this.props.navigation.navigate('TabRouter');
     } catch (err) {
-
+      console.log('fail to login with firebase ...');
     }
   };
 //
@@ -250,7 +251,7 @@ doGoogleLogin = async () => {
               borderRadius={5}
               fontSize={18}
               icon={{type:'evilicon', name:'sc-google-plus', size:40}}
-              onPress={this.googleLogin}
+              onPress={() => this.googleLogin()}
             />
             {/*<Button
             title='Sign in with Facebook'
